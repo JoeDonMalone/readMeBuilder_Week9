@@ -3,8 +3,6 @@ const fs = require('fs');
 var repoName = 'readMeBuilder_Week9';
 var pagesLink = `https://joedonmalone.github.io/${repoName}/`;
 
-
-
 inquirer
 .prompt([
     {
@@ -40,7 +38,22 @@ inquirer
     {
       type: 'input',
       name: 'licensing',
-      message: "How do you feel your work should be licensed?",
+      message: "How do you feel your work should be licensed? (probably 'MIT')",
+    },
+    {
+      type: 'input',
+      name: 'badges',
+      message: "List your Badges",
+    },
+    {
+      type: 'input',
+      name: 'features',
+      message: "Particular features you'd like to add?",
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: "Particular features you'd like to add?",
     },
   ])
   .then((data) => {
@@ -58,24 +71,20 @@ const readMeText = (data) =>
 - Lessons Learned: 
 * ${data.problemsSolved}
 ## Installation
-- ${installationSteps}
+- ${data.installationSteps}
 ## Usage
- - ${usage}
+ - ${data.usage}
 ## Credits
- - ${creditDue}
+ - ${data.creditDue}
 ## License
- - Licensed under the ${licensing} license.
----
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+ - Licensed under the ${data.licensing} license.
 ## Badges
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+ - ${data.badges}
 ## Features
-If your project has a lot of features, list them here.
-## How to Contribute
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-## Tests`
-
+ - ${data.features}
+## Tests
+ - ${data.tests}
+`
 
 // To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 //     ```md
