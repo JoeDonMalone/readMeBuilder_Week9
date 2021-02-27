@@ -2,7 +2,7 @@
 ## Description
 - I built this project as a way to improve productivity and streamline the maintenance of my repos 
 - Lessons Learned: 
- * It is a major time savor
+  * It is a major time savor
 ## Installation
 - NA
 ## Usage
