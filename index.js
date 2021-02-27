@@ -1,7 +1,6 @@
 var inquirer = require('inquirer');
 const fs = require('fs');
-var repoName = 'readMeBuilder_Week9';
-var pagesLink = `https://joedonmalone.github.io/${repoName}/`;
+var repoName = 'README Builder';
 
 inquirer
 .prompt([
