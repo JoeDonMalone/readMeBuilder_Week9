@@ -68,8 +68,8 @@ const readMeText = (data) =>
 `# ${data.title}
 ## Description
 - ${data.motivation}
-- Lessons Learned: 
-* ${data.problemsSolved}
+- Lessons Learned:
+  * ${data.problemsSolved}
 ## Installation
 - ${data.installationSteps}
 ## Usage
