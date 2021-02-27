@@ -7,12 +7,12 @@ inquirer
 .prompt([
     {
       type: 'input',
-      name: 'Title',
+      name: 'title',
       message: 'What is your GitHub repository Name?',
     },
     {
       type: 'input',
-      name: 'Motivation',
+      name: 'motivation',
       message: 'What was your motivation for building this project?',
     },
     {
@@ -57,7 +57,7 @@ inquirer
     },
   ])
   .then((data) => {
-    const filename = 'README.MD'; //`${data.contact}.md`
+    const filename = 'README.md'; //`${data.contact}.md`
 
     fs.writeFile(filename, readMeText(data), (err) =>
       err ? console.log(err) : console.log('Success!')
@@ -65,9 +65,9 @@ inquirer
   });
 
 const readMeText = (data) => 
-`# ${data.projectTitle}
+`# ${data.title}
 ## Description
-- ${data.Motivation}
+- ${data.motivation}
 - Lessons Learned: 
 * ${data.problemsSolved}
 ## Installation
@@ -77,7 +77,7 @@ const readMeText = (data) =>
 ## Credits
  - ${data.creditDue}
 ## License
- - Licensed under the ${data.licensing} license.
+ - Licensed under the [${data.licensing.toUpperCase()}]('./license.txt') license.
 ## Badges
  - ${data.badges}
 ## Features
