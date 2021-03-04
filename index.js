@@ -2,6 +2,13 @@ var inquirer = require('inquirer');
 const fs = require('fs');
 var repoName = 'README Builder';
 
+function getLicense(license) {
+  switch(license){
+    case 'MIT':
+      return('[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)')
+  }
+}
+
 inquirer
 .prompt([
     {
@@ -38,7 +45,7 @@ inquirer
       type: 'list',
       name: 'licensing',
       message: "How do you feel your work should be licensed? (probably 'MIT')",
-      choices: [ "Choice A", new inquirer.Separator(), "choice B" ] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
+      choices: [ "MIT", new inquirer.Separator(), "NONE" ] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
     },
     {
       type: 'input',
@@ -82,7 +89,7 @@ const readMeText = (data) =>
 ## Contributions
  - ${data.creditDue}
 ## License
- - Licensed under the [${data.licensing.toUpperCase()}]('./license.txt') license.
+ - Licensed under the ${getLicense(data.licensing)} license.
 ## Badges
  - ${data.badges}
 ## Features
