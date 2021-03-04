@@ -35,9 +35,10 @@ inquirer
       message: "Are there any contributors to this project?",
     },
     {
-      type: 'input',
+      type: 'list',
       name: 'licensing',
       message: "How do you feel your work should be licensed? (probably 'MIT')",
+      choices: [ "Choice A", new inquirer.Separator(), "choice B" ] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
     },
     {
       type: 'input',
@@ -52,28 +53,33 @@ inquirer
     {
       type: 'input',
       name: 'tests',
-      message: "Particular features you'd like to add?",
+      message: "Are there any testing methods you'd like to include?",
     },
   ])
   .then((data) => {
-    const filename = 'README.md'; //`${data.contact}.md`
-
+    const filename = 'README.md';
     fs.writeFile(filename, readMeText(data), (err) =>
-      err ? console.log(err) : console.log('Success!')
-    );
+      err ? console.log(err) : console.log('Success!'))
+  })
+  .catch( error => {
+    if(error) {
+      console.log(error);
+    }
   });
 
 const readMeText = (data) => 
 `# ${data.title}
 ## Description
 - ${data.motivation}
+## Table of Contents:
+
 - Lessons Learned:
   * ${data.problemsSolved}
 ## Installation
 - ${data.installationSteps}
 ## Usage
  - ${data.usage}
-## Credits
+## Contributions
  - ${data.creditDue}
 ## License
  - Licensed under the [${data.licensing.toUpperCase()}]('./license.txt') license.
@@ -83,6 +89,7 @@ const readMeText = (data) =>
  - ${data.features}
 ## Tests
  - ${data.tests}
+## Questions?
 `
 
 // To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
