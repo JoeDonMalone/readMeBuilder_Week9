@@ -119,7 +119,7 @@ const readMeText = (data) =>
 ## Contributions:
  - ${data.creditDue}
 ## License:
- - Licensed under the ${getLicense(data.licensing)} license.
+ - ${getLicense(data.licensing)}
 ## Badges:
  - ${data.badges}
 ## Features:
