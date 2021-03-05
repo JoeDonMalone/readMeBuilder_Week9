@@ -1,24 +1,24 @@
-# ;a
-## Description:       | :exclamation:  These works are licensed! [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)  |
-- a
+# ReadMe Builder
+## Description:                                                                                       | :exclamation:  These works are licensed! [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)  |
+- A user friendly tool to use a simple template for building a readme.
 ## Motivations:
-- a
+- I wanted to to automate a tedious process.
 ## Table of Contents:
 - 
 - Lessons Learned:
-  * a
+  * It saves me time!
 ## Installation
-- a
+- NA
 ## Usage
- - a
+ - The code can be used for any project requring a Markdown file
 ## Contributions
- - a
+ - NONE
 ## License
  - Licensed under the [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/) license.
 ## Badges
- - NA
+ - NONE
 ## Features
- - NA
+ - NONE
 ## Tests
- - None
+ - NONE
 ## Questions?

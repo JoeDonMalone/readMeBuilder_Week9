@@ -51,7 +51,7 @@ inquirer
     {
       type: 'input',
       name: 'usage',
-      message: "Where/How c an this application be used?",
+      message: "Where/How can this application be used?",
     },
     {
       type: 'input',
@@ -94,7 +94,7 @@ inquirer
 
 const readMeText = (data) => 
 `# ${data.title}
-## Description:       | :exclamation:  These works are licensed! ${getLicense(data.licensing)}  |
+## Description:                                                                                       | :exclamation:  These works are licensed! ${getLicense(data.licensing)}  |
 - ${data.description}
 ## Motivations:
 - ${data.motivation}
