@@ -35,4 +35,4 @@
  - None
 ## Questions?
 - [GITHUB](https://github.com/JoeDonMalone)
-- [CONTACT ME](Joe@framestix.com)
+- <p><a href="mailto:Joe.d.malone@gmail.com">CONTACT ME</a></p>
