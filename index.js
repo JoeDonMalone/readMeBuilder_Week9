@@ -40,8 +40,8 @@ inquirer
     },
     {
       type: 'input',
-      name: 'problemsSolved',
-      message: 'What problem does it solve?',
+      name: 'lessonsLearned',
+      message: 'What did you learn from this project?',
     },
     {
       type: 'input',
@@ -62,8 +62,7 @@ inquirer
       type: 'list',
       name: 'licensing',
       message: "How do you feel your work should be licensed? (probably 'MIT')",
-      choices: [ "MIT", "Apache","Boost", "BSD", "GNU", "ISC", "WTFPL"] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
-    // , new inquirer.Separator()
+      choices: [ "MIT", "Apache","Boost", "BSD", "GNU", "ISC", "WTFPL"]
     },
     {
       type: 'input',
@@ -93,30 +92,43 @@ inquirer
   });
 
 const readMeText = (data) => 
-`# ${data.title}
-## Description:                                                                                       | :exclamation:  These works are licensed! ${getLicense(data.licensing)}  |
+`# ${data.title}| :exclamation:  These works are licensed! ${getLicense(data.licensing)}  |
+## Description:
 - ${data.description}
+- ![Image of Yaktocat](./Assets/Images/CodeShot.JPG)
 ## Motivations:
 - ${data.motivation}
 ## Table of Contents:
-- 
-- Lessons Learned:
-  * ${data.problemsSolved}
-## Installation
+- [Description](#Description)
+- [Motivations](#Motivations)
+- [Lessons Learned](#Lessons-Learned)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributions](#Contributions)
+- [License](#License)
+- [Badges](#Badges)
+- [Features](#Features)
+- [Tests](#Tests)
+- [Questions](#Questions)
+## Lessons Learned:
+- ${data.lessonsLearned}
+## Installation:
 - ${data.installationSteps}
-## Usage
+## Usage:
  - ${data.usage}
-## Contributions
+## Contributions:
  - ${data.creditDue}
-## License
+## License:
  - Licensed under the ${getLicense(data.licensing)} license.
-## Badges
+## Badges:
  - ${data.badges}
-## Features
+## Features:
  - ${data.features}
-## Tests
+## Tests:
  - ${data.tests}
 ## Questions?
+- [GITHUB](https://github.com/JoeDonMalone)
+- [CONTACT ME](Joe@framestix.com)
 `
 
 // To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
