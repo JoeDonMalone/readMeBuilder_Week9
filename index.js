@@ -6,6 +6,18 @@ function getLicense(license) {
   switch(license){
     case 'MIT':
       return('[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)')
+    case 'Apache':
+      return('[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)')
+    case 'Boost':
+      return('[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)')
+    case 'BSD':
+      return('[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)')
+    case 'GNU':
+      return('[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)')
+    case 'ISC':
+      return('[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)')
+    case 'WTFPL':
+      return('[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)')
   }
 }
 
@@ -15,6 +27,11 @@ inquirer
       type: 'input',
       name: 'title',
       message: 'What is your GitHub repository Name?',
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Simply describe the project?',
     },
     {
       type: 'input',
@@ -34,7 +51,7 @@ inquirer
     {
       type: 'input',
       name: 'usage',
-      message: "Where/How Can this application be used?",
+      message: "Where/How c an this application be used?",
     },
     {
       type: 'input',
@@ -45,7 +62,8 @@ inquirer
       type: 'list',
       name: 'licensing',
       message: "How do you feel your work should be licensed? (probably 'MIT')",
-      choices: [ "MIT", new inquirer.Separator(), "NONE" ] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
+      choices: [ "MIT", "Apache","Boost", "BSD", "GNU", "ISC", "WTFPL"] //Need to copy licenses and create a template literal to write or reference the 'licenses' object:
+    // , new inquirer.Separator()
     },
     {
       type: 'input',
@@ -76,10 +94,12 @@ inquirer
 
 const readMeText = (data) => 
 `# ${data.title}
-## Description
+## Description:       | :exclamation:  These works are licensed! ${getLicense(data.licensing)}  |
+- ${data.description}
+## Motivations:
 - ${data.motivation}
 ## Table of Contents:
-
+- 
 - Lessons Learned:
   * ${data.problemsSolved}
 ## Installation
