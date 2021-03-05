@@ -20,6 +20,7 @@
 - Inquirer is a very powerful tool, and fun to use
 ## Installation:
 - Step 1: Run npm i, \n - Step 2: 'node index.js'
+- [Video Support](https://drive.google.com/file/d/1KtTK93NbrRAysQ8mCmOLkiusGqnDZJDB/view)
 ## Usage:
  - Anyone in need of an Application README can use this App, simply follow the steps above!
 ## Contributions:
